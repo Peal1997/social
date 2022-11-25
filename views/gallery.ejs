@@ -1,0 +1,44 @@
+<div class="profile-body">
+  <div class="profile-wraper">
+    <div class="profile-info">
+      <%- include("layouts/info.ejs") %>
+      <hr />
+      <div class="user-menu"><%- include("layouts/menu.ejs") %></div>
+    </div>
+    <div class="profile-box">
+      <div class="box-content">
+        <h2>Select gallery Photo</h2>
+        <% if (message) { %>
+        <p><%= message %></p>
+        <% } %>
+        <hr />
+        <div class="form-wraper">
+          <form
+            action="/gallery-update"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <label for="gallery">Select a Photo</label>
+              <div class="profile-photo gallery"></div>
+              <label class="upload">
+                <hr />
+                <i class="fa fa-photo uplaod"></i>
+                <input
+                  name="gallery"
+                  multiple
+                  id="gallery_photo"
+                  style="display: none"
+                  type="file"
+                />
+              </label>
+            </div>
+            <div class="form-group">
+              <button>Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

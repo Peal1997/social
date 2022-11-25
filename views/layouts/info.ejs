@@ -1,0 +1,9 @@
+<div class="user info">
+  <% if (user.photo) { %>
+  <img src="./media/users/<%= user.photo  %> " alt="" />
+  <% } else { %>
+  <img src="./images/avatar.png" />
+  <% } %>
+  <h3><%= user.name %></h3>
+  <p><%= user.email %></p>
+</div>
